@@ -3,6 +3,7 @@
 	padding: 0;
 	text-decoration: none;
 	list-style: none;
+	font-family: 'Ubuntu', sans-serif;
 }
 
 .menu-top {
@@ -22,7 +23,30 @@
   box-shadow: 1px 1px 4px #888;
   height: 220px;
   width: 220px;
+  margin-top: 33px;
 }
 .main-wrapper {
-	margin: 50px 20px;
+	margin: 30px 20px;
+}
+.lb-size {
+	font-size: 17px;
+}
+.f-control-size {
+	font-size: 15px;
+	height: 46px;
+}
+.bluepane {
+	background-image: url("../images/bg_blueplane.jpg");
+	background-size: cover;
+	height: 200px;
+  width: 100%;
+}
+
+.heading-name {
+	font-size: 4em;
+	color: #fefefe;
+}
+.heading-description {
+	display: block;
+	color: #fefefe;
 }
