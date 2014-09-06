@@ -16,5 +16,10 @@
 .menu li {
 	display: inline-block;
 	color: white;
-
+}
+.qr-image {
+	border-radius: 8px;
+  box-shadow: 1px 1px 4px #888;
+  height: 220px;
+  width: 220px;
 }
