@@ -1,0 +1,24 @@
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+}
+.container {
+	width: 1170px;
+	margin: 0 auto;
+}
+
+.menu-top {
+	background: #333;
+	height: 30px;
+}
+
+.menu {
+	text-align: right;
+}
+.menu li {
+	display: inline-block;
+	color: white;
+
+}
