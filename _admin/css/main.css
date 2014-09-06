@@ -6,3 +6,11 @@
 .mt-90 {
 	margin-top: 90px;
 }
+
+.qr-image {
+	border-radius: 8px;
+  box-shadow: 1px 1px 4px #888;
+  height: 190px;
+  width: 190px;
+  margin-top: 33px;
+}
