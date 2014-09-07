@@ -42,57 +42,57 @@
                                     <div class="col-xs-12 col-sm-4">
                                       <div class="form-group">
                                         <label for="con_fname" class="lb-size">First Name:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_fname">
+                                        <input type="text" class="form-control f-control-size" name="con_fname" id="con_fname">
                                       </div>
                                       <div class="form-group">
                                         <label for="con_lname" class="lb-size">Last Name:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_lname">
+                                        <input type="text" class="form-control f-control-size" name="con_lname" id="con_lname">
                                       </div>
                                       <div class="form-group">
                                         <label for="con_com_name" class="lb-size">Company Name:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_com_name">
+                                        <input type="text" class="form-control f-control-size" name="con_com_name" id="con_com_name">
                                       </div>
                                       <div class="form-group">
                                         <label for="con_title" class="lb-size">Title:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_title">
+                                        <input type="text" class="form-control f-control-size" name="con_title" id="con_title">
                                       </div>
                                       <div class="form-group">
                                         <label for="con_phone" class="lb-size">Telephone:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_phone">
+                                        <input type="text" class="form-control f-control-size" name="con_phone" id="con_phone">
                                       </div>
                                       <div class="form-group">
                                         <label for="con_email" class="lb-size">Email:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_email">
+                                        <input type="text" class="form-control f-control-size" name="con_email" id="con_email">
                                       </div>
                                       <div class="form-group">
                                         <label for="con_url" class="lb-size">URL:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_url">
+                                        <input type="text" class="form-control f-control-size" name="con_url" id="con_url">
                                       </div>
                                     </div>
                                     <div class="col-xs-12 col-sm-4">
                                       <div class="form-group">
                                         <label for="con_street_name" class="lb-size">Street Name:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_street_name">
+                                        <input type="text" class="form-control f-control-size" name="con_street_name" id="con_street_name">
                                       </div>
                                       <div class="form-group">
                                         <label for="con_city" class="lb-size">City:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_city">
+                                        <input type="text" class="form-control f-control-size" name="con_city" id="con_city">
                                       </div>
                                       <div class="form-group">
                                         <label for="con_state_name" class="lb-size">State:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_state_name">
+                                        <input type="text" class="form-control f-control-size" name="con_state_name" id="con_state_name">
                                       </div>
                                       <div class="form-group">
                                         <label for="con_postal_code" class="lb-size">Postal Code:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_postal_code">
+                                        <input type="text" class="form-control f-control-size" name="con_postal_code" id="con_postal_code">
                                       </div>
                                       <div class="form-group">
                                         <label for="con_country" class="lb-size">Country:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_country">
+                                        <input type="text" class="form-control f-control-size" name="con_country" id="con_country">
                                       </div>
                                       <div class="form-group">
                                         <label for="con_note" class="lb-size">Note:</label>
-                                        <textarea col="5" rows="4" class="form-control" name="con_note"></textarea>
+                                        <textarea col="5" rows="4" class="form-control" name="con_note" id="con_note"></textarea>
                                       </div>
                                       <input type="button" id="qr_generate" value="Generate" class="btn btn-success pull-right btn-lg">
                                     </div>
