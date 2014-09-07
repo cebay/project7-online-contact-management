@@ -125,9 +125,25 @@
           }
           
           $("#qr_generate").click(function(){
-            var src = "http://chart.apis.google.com/chart?cht=qr&chs=190x190&chl=BEGIN:VCARD%0AVERSION:2.1%0AN:reth;radin%0AFN:radin%20reth%0AORG:yoolk%0ATITLE:web%20developer%0AADR:;;21;tk;LA;12335;cambodia%0ATEL;WORK;VOICE:093555223%0AEMAIL;PREF;INTERNET:radin%40yoolk.com%0AURL:www.radin-reth.com%0ANOTE:some%20noted.%0AEND:VCARD&choe=UTF-8&chld=L";
-            var oImage = img_create(src, "some alt", "some title");
+            var base_uri = "http://chart.apis.google.com/chart";
 
+            var con_fname       = document.getElementById("con_fname").value;
+            var con_lname       = document.getElementById("con_lname").value;
+            var con_com_name    = document.getElementById("con_com_name").value;
+            var con_title       = document.getElementById("con_title").value;
+            var con_phone       = document.getElementById("con_phone").value;
+            var con_email       = document.getElementById("con_email").value;
+            var con_url         = document.getElementById("con_url").value;
+            var con_street_name = document.getElementById("con_street_name").value;
+            var con_city        = document.getElementById("con_city").value;
+            var con_state_name  = document.getElementById("con_state_name").value;
+            var con_postal_code = document.getElementById("con_postal_code").value;
+            var con_country     = document.getElementById("con_country").value;
+            var con_note        = document.getElementById("con_note").value;
+
+            var uri = base_uri + "?cht=qr&chs=190x190&chl=BEGIN:VCARD\nVERSION:2.1\nN:" + con_lname + ";" + con_fname + "\nFN:" + con_fname + " " + con_lname + "\nORG:" + con_com_name + "\nTITLE:" + con_title + "\nADR:;;" + con_street_name + ";" + con_city + ";" + con_state_name + ";" + con_postal_code + ";" + con_country + "\nTEL;WORK;VOICE:" + con_phone + "\nEMAIL;PREF;INTERNET:" + con_email + "\nURL:" + con_url + "\nNOTE:" + con_note + "\nEND:VCARD&choe=UTF-8&chld=L";
+
+            var oImage = img_create(encodeURI(uri), "some alt", "some title");
             var oImageWrapper = document.getElementsByClassName("qr-image")[0];
             oImageWrapper.appendChild(oImage);
           });
