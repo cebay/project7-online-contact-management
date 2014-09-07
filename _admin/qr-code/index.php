@@ -41,58 +41,58 @@
                                 <form role="form">
                                     <div class="col-xs-12 col-sm-4">
                                       <div class="form-group">
-                                        <label for="exampleInputEmail1" class="lb-size">First Name:</label>
-                                        <input type="text" class="form-control f-control-size" id="exampleInputEmail1" placeholder="First Name">
+                                        <label for="con_fname" class="lb-size">First Name:</label>
+                                        <input type="text" class="form-control f-control-size" name="con_fname" placeholder="First Name">
                                       </div>
                                       <div class="form-group">
-                                        <label for="exampleInputEmail1" class="lb-size">Last Name:</label>
-                                        <input type="text" class="form-control f-control-size" id="exampleInputEmail1" placeholder="Last Name">
+                                        <label for="con_lname" class="lb-size">Last Name:</label>
+                                        <input type="text" class="form-control f-control-size" name="con_lname" placeholder="Last Name">
                                       </div>
                                       <div class="form-group">
-                                        <label for="exampleInputPassword1" class="lb-size">Company Name:</label>
-                                        <input type="text" class="form-control f-control-size" id="exampleInputPassword1" placeholder="phone">
+                                        <label for="con_com_name" class="lb-size">Company Name:</label>
+                                        <input type="text" class="form-control f-control-size" name="con_com_name" placeholder="company name">
                                       </div>
                                       <div class="form-group">
-                                        <label for="exampleInputEmail1" class="lb-size">Title:</label>
-                                        <input type="text" class="form-control f-control-size" id="exampleInputEmail1" placeholder="First Name">
+                                        <label for="con_title" class="lb-size">Title:</label>
+                                        <input type="text" class="form-control f-control-size" name="con_title" placeholder="title">
                                       </div>
                                       <div class="form-group">
-                                        <label for="exampleInputEmail1" class="lb-size">Telephone:</label>
-                                        <input type="text" class="form-control f-control-size" id="exampleInputEmail1" placeholder="Last Name">
+                                        <label for="con_phone" class="lb-size">Telephone:</label>
+                                        <input type="text" class="form-control f-control-size" name="con_phone" placeholder="telephone">
                                       </div>
                                       <div class="form-group">
-                                        <label for="exampleInputPassword1" class="lb-size">Email:</label>
-                                        <input type="text" class="form-control f-control-size" id="exampleInputPassword1" placeholder="phone">
+                                        <label for="con_email" class="lb-size">Email:</label>
+                                        <input type="text" class="form-control f-control-size" name="con_email" placeholder="email">
                                       </div>
                                       <div class="form-group">
-                                        <label for="exampleInputPassword1" class="lb-size">URL:</label>
-                                        <input type="text" class="form-control f-control-size" id="exampleInputPassword1" placeholder="phone">
+                                        <label for="con_url" class="lb-size">URL:</label>
+                                        <input type="text" class="form-control f-control-size" name="con_url" placeholder="url">
                                       </div>
                                     </div>
                                     <div class="col-xs-12 col-sm-4">
                                       <div class="form-group">
-                                        <label for="exampleInputEmail1" class="lb-size">Street Name:</label>
-                                        <input type="text" class="form-control f-control-size" id="exampleInputEmail1" placeholder="First Name">
+                                        <label for="con_street_name" class="lb-size">Street Name:</label>
+                                        <input type="text" class="form-control f-control-size" name="con_street_name" placeholder="street name">
                                       </div>
                                       <div class="form-group">
-                                        <label for="exampleInputEmail1" class="lb-size">City:</label>
-                                        <input type="text" class="form-control f-control-size" id="exampleInputEmail1" placeholder="Last Name">
+                                        <label for="con_city" class="lb-size">City:</label>
+                                        <input type="text" class="form-control f-control-size" name="con_city" placeholder="city">
                                       </div>
                                       <div class="form-group">
-                                        <label for="exampleInputPassword1" class="lb-size">State:</label>
-                                        <input type="text" class="form-control f-control-size" id="exampleInputPassword1" placeholder="phone">
+                                        <label for="con_state_name" class="lb-size">State:</label>
+                                        <input type="text" class="form-control f-control-size" name="con_state_name" placeholder="state">
                                       </div>
                                       <div class="form-group">
-                                        <label for="exampleInputEmail1" class="lb-size">Postal Code:</label>
-                                        <input type="text" class="form-control f-control-size" id="exampleInputEmail1" placeholder="First Name">
+                                        <label for="con_postal_code" class="lb-size">Postal Code:</label>
+                                        <input type="text" class="form-control f-control-size" name="con_postal_code" placeholder="postal code">
                                       </div>
                                       <div class="form-group">
-                                        <label for="exampleInputEmail1" class="lb-size">Country:</label>
-                                        <input type="text" class="form-control f-control-size" id="exampleInputEmail1" placeholder="Last Name">
+                                        <label for="con_country" class="lb-size">Country:</label>
+                                        <input type="text" class="form-control f-control-size" name="con_country" placeholder="country">
                                       </div>
                                       <div class="form-group">
-                                        <label for="exampleInputPassword1" class="lb-size">Note:</label>
-                                        <textarea col="5" rows="4" class="form-control"></textarea>
+                                        <label for="con_note" class="lb-size">Note:</label>
+                                        <textarea col="5" rows="4" class="form-control" name="con_note"></textarea>
                                       </div>
                                       <button type="submit" class="btn btn-success pull-right btn-lg">Generate</button>
                                     </div>
