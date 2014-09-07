@@ -94,7 +94,7 @@
                                         <label for="con_note" class="lb-size">Note:</label>
                                         <textarea col="5" rows="4" class="form-control" name="con_note"></textarea>
                                       </div>
-                                      <button type="submit" class="btn btn-success pull-right btn-lg">Generate</button>
+                                      <input type="button" id="qr_generate" value="Generate" class="btn btn-success pull-right btn-lg">
                                     </div>
                                 </form>
                                 <div class="col-xs-12 col-sm-4">
@@ -112,6 +112,25 @@
 
         <script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
         <script src="../../bootstrap-3.2.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+          function img_create(src, alt, title) {
+              var ua = window.navigator.userAgent;
+              var msie = ua.indexOf('MSIE ');
 
+              var img= msie? new Image() : document.createElement('img');
+              img.src= src;
+              if (alt!=null) img.alt= alt;
+              if (title!=null) img.title= title;
+              return img;
+          }
+          
+          $("#qr_generate").click(function(){
+            var src = "http://chart.apis.google.com/chart?cht=qr&chs=190x190&chl=BEGIN:VCARD%0AVERSION:2.1%0AN:reth;radin%0AFN:radin%20reth%0AORG:yoolk%0ATITLE:web%20developer%0AADR:;;21;tk;LA;12335;cambodia%0ATEL;WORK;VOICE:093555223%0AEMAIL;PREF;INTERNET:radin%40yoolk.com%0AURL:www.radin-reth.com%0ANOTE:some%20noted.%0AEND:VCARD&choe=UTF-8&chld=L";
+            var oImage = img_create(src, "some alt", "some title");
+
+            var oImageWrapper = document.getElementsByClassName("qr-image")[0];
+            oImageWrapper.appendChild(oImage);
+          });
+        </script>
     </body>
 </html>
