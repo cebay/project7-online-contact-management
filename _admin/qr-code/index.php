@@ -42,53 +42,53 @@
                                     <div class="col-xs-12 col-sm-4">
                                       <div class="form-group">
                                         <label for="con_fname" class="lb-size">First Name:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_fname" placeholder="First Name">
+                                        <input type="text" class="form-control f-control-size" name="con_fname">
                                       </div>
                                       <div class="form-group">
                                         <label for="con_lname" class="lb-size">Last Name:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_lname" placeholder="Last Name">
+                                        <input type="text" class="form-control f-control-size" name="con_lname">
                                       </div>
                                       <div class="form-group">
                                         <label for="con_com_name" class="lb-size">Company Name:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_com_name" placeholder="company name">
+                                        <input type="text" class="form-control f-control-size" name="con_com_name">
                                       </div>
                                       <div class="form-group">
                                         <label for="con_title" class="lb-size">Title:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_title" placeholder="title">
+                                        <input type="text" class="form-control f-control-size" name="con_title">
                                       </div>
                                       <div class="form-group">
                                         <label for="con_phone" class="lb-size">Telephone:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_phone" placeholder="telephone">
+                                        <input type="text" class="form-control f-control-size" name="con_phone">
                                       </div>
                                       <div class="form-group">
                                         <label for="con_email" class="lb-size">Email:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_email" placeholder="email">
+                                        <input type="text" class="form-control f-control-size" name="con_email">
                                       </div>
                                       <div class="form-group">
                                         <label for="con_url" class="lb-size">URL:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_url" placeholder="url">
+                                        <input type="text" class="form-control f-control-size" name="con_url">
                                       </div>
                                     </div>
                                     <div class="col-xs-12 col-sm-4">
                                       <div class="form-group">
                                         <label for="con_street_name" class="lb-size">Street Name:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_street_name" placeholder="street name">
+                                        <input type="text" class="form-control f-control-size" name="con_street_name">
                                       </div>
                                       <div class="form-group">
                                         <label for="con_city" class="lb-size">City:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_city" placeholder="city">
+                                        <input type="text" class="form-control f-control-size" name="con_city">
                                       </div>
                                       <div class="form-group">
                                         <label for="con_state_name" class="lb-size">State:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_state_name" placeholder="state">
+                                        <input type="text" class="form-control f-control-size" name="con_state_name">
                                       </div>
                                       <div class="form-group">
                                         <label for="con_postal_code" class="lb-size">Postal Code:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_postal_code" placeholder="postal code">
+                                        <input type="text" class="form-control f-control-size" name="con_postal_code">
                                       </div>
                                       <div class="form-group">
                                         <label for="con_country" class="lb-size">Country:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_country" placeholder="country">
+                                        <input type="text" class="form-control f-control-size" name="con_country">
                                       </div>
                                       <div class="form-group">
                                         <label for="con_note" class="lb-size">Note:</label>
