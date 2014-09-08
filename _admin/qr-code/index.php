@@ -119,8 +119,9 @@
                                         <label for="con_note" class="lb-size">Note:</label>
                                         <textarea col="5" rows="4" class="form-control" name="con_note" id="con_note"></textarea>
                                       </div>
-                                      <input type="button" id="qr_generate" value="Generate" class="btn btn-success pull-right btn-lg">
-                                      <input type="text" name="con_qr_image" id="con_qr_image">
+                                      <input type="button" id="qr_generate" value="Generate" class="pull-right" style="display: block;">
+                                      <input type="submit" name="submit" value="save" class="btn btn-success pull-right btn-lg">
+                                      <input type="hidden" name="con_qr_image" id="con_qr_image">
                                     </div>
                                 </form>
                                 <div class="col-xs-12 col-sm-4">
@@ -174,7 +175,7 @@
             document.getElementById("con_qr_image").value = uri;
             oImageWrapper.appendChild(oImage);
 
-            document.getElementById("frm").submit();
+            // document.getElementById("frm").submit();
 
           });
         </script>
