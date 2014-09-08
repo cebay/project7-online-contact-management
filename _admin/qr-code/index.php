@@ -143,7 +143,7 @@
 
             var uri = base_uri + "?cht=qr&chs=190x190&chl=BEGIN:VCARD\nVERSION:2.1\nN:" + con_lname + ";" + con_fname + "\nFN:" + con_fname + " " + con_lname + "\nORG:" + con_com_name + "\nTITLE:" + con_title + "\nADR:;;" + con_street_name + ";" + con_city + ";" + con_state_name + ";" + con_postal_code + ";" + con_country + "\nTEL;WORK;VOICE:" + con_phone + "\nEMAIL;PREF;INTERNET:" + con_email + "\nURL:" + con_url + "\nNOTE:" + con_note + "\nEND:VCARD&choe=UTF-8&chld=L";
 
-            var oImage = img_create(encodeURI(uri), "some alt", "some title");
+            var oImage = img_create(encodeURI(uri), "Loading...", con_fname);
             var oImageWrapper = document.getElementsByClassName("qr-image")[0];
             oImageWrapper.appendChild(oImage);
           });
