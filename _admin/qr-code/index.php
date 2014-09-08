@@ -1,3 +1,28 @@
+<?php
+
+  require("../config/class.php");
+  if($_POST) {
+
+    $opr->contact->con_fname        = $_POST['con_fname'];
+    $opr->contact->con_lname        = $_POST['con_lname'];
+    $opr->contact->con_com_name     = $_POST['con_com_name'];
+    $opr->contact->con_title        = $_POST['con_title'];
+    $opr->contact->con_phone        = $_POST['con_phone'];
+    $opr->contact->con_email        = $_POST['con_email'];
+    $opr->contact->con_url          = $_POST['con_url'];
+    $opr->contact->con_street_name  = $_POST['con_street_name'];
+
+    $opr->contact->con_city         = $_POST['con_city'];
+    $opr->contact->con_state_name   = $_POST['con_state_name'];
+    $opr->contact->con_postal_code  = $_POST['con_postal_code'];
+    $opr->contact->con_country      = $_POST['con_country'];
+    $opr->contact->con_note         = $_POST['con_note'];
+    $opr->contact->con_qr_image     = $_POST['con_qr_image'];
+    $opr->contact->user_id          = 123;
+
+    $opr->contact->save();
+  }
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -38,7 +63,7 @@
                           <div class="col-md-9">
                             
                             <div class="row">
-                                <form role="form">
+                                <form role="form" id="frm" method="post">
                                     <div class="col-xs-12 col-sm-4">
                                       <div class="form-group">
                                         <label for="con_fname" class="lb-size">First Name:</label>
@@ -95,6 +120,7 @@
                                         <textarea col="5" rows="4" class="form-control" name="con_note" id="con_note"></textarea>
                                       </div>
                                       <input type="button" id="qr_generate" value="Generate" class="btn btn-success pull-right btn-lg">
+                                      <input type="text" name="con_qr_image" id="con_qr_image">
                                     </div>
                                 </form>
                                 <div class="col-xs-12 col-sm-4">
@@ -145,7 +171,11 @@
 
             var oImage = img_create(encodeURI(uri), "Loading...", con_fname);
             var oImageWrapper = document.getElementsByClassName("qr-image")[0];
+            document.getElementById("con_qr_image").value = uri;
             oImageWrapper.appendChild(oImage);
+
+            document.getElementById("frm").submit();
+
           });
         </script>
     </body>
