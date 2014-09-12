@@ -20,7 +20,11 @@
     $opr->contact->con_qr_image     = $_POST['con_qr_image'];
     $opr->contact->user_id          = 123;
 
-    $opr->contact->save();
+    if(! $opr->contact->save()) {
+      echo "Save Fail!";
+    } else {
+      header("location: index.php");
+    }
   }
 ?>
 <!DOCTYPE html>
@@ -120,7 +124,7 @@
                                         <textarea col="5" rows="4" class="form-control" name="con_note" id="con_note"></textarea>
                                       </div>
                                       <input type="button" id="qr_generate" value="Generate" class="pull-right" style="display: block;">
-                                      <input type="submit" name="submit" value="save" class="btn btn-success pull-right btn-lg">
+                                      <input type="submit" name="submit" value="save" id="submit" class="btn btn-success pull-right btn-lg disabled">
                                       <input type="hidden" name="con_qr_image" id="con_qr_image">
                                     </div>
                                 </form>
@@ -175,6 +179,7 @@
             document.getElementById("con_qr_image").value = uri;
             oImageWrapper.appendChild(oImage);
 
+            $("#submit").removeClass("disabled");
             // document.getElementById("frm").submit();
 
           });
