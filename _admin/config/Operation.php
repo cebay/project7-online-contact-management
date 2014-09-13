@@ -10,6 +10,7 @@
 
 		function find_record($field, $table, $condition) {
 			$stmt	 = sprintf(FIND_RECORD, $field, $table, $condition);
+			
 			$query 	 = mysql_query($stmt);
 			$record = mysql_fetch_assoc($query);
 

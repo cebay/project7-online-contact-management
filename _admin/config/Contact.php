@@ -72,11 +72,28 @@
 			return mysql_query($stmt);
 		}
 		function update() {
-			$lat 	 = $this->lat;
-			$lng 	 = $this->lng;
-			$user_id = $this->user_id;
+			$con_id 					= $this->con_id;
+			$con_fname		 		= $this->con_fname;
+			$con_lname 		 		= $this->con_lname;
+			$con_com_name 	 	= $this->con_com_name;
+			$con_title		 		= $this->con_title;
+			$con_phone 		 		= $this->con_phone;
+			$con_email 	 			= $this->con_email;
+			$con_url		 			= $this->con_url;
+			$con_street_name	= $this->con_street_name;
 
-			$stmt 	 = sprintf(CONTACT_SQL_UPDATE, $lat, $lng, $user_id);
+			$con_city 	 			= $this->con_city;
+			$con_state_name		= $this->con_state_name;
+			$con_postal_code 	= $this->con_postal_code;
+			$con_country 	 		= $this->con_country;
+			$con_note		 			= $this->con_note;
+			$con_qr_image 		= $this->con_qr_image;
+			$user_id 	 				= $this->user_id;
+
+			$stmt 	 = sprintf(CONTACT_SQL_UPDATE, $con_fname, $con_lname, $con_com_name, $con_title, $con_phone, $con_email, 
+				$con_url, $con_street_name, $con_city, $con_state_name, $con_postal_code, $con_country, $con_note, $con_qr_image, 
+				$user_id, $con_id);
+
 			return mysql_query($stmt);
 		}
 		function upsert() {

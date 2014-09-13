@@ -30,7 +30,7 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
+        
         <div class="container-full-width">
             <div class="container mt-90">
                 <div class="main-content">
@@ -70,7 +70,7 @@
                                       <img src="<?php echo str_replace("190x190","190x190",$row['con_qr_image']); ?>">
                                     </td>
                                     <td>
-                                      <a href="?action=edit" class="label label-warning">Edit</a> | 
+                                      <a href="generate-qr-code.php?action=edit&con_id=<?php echo $row['con_id']; ?>" class="label label-warning">Edit</a> | 
                                       <a href="?action=delete&con_id=<?php echo $row['con_id']; ?>" onclick="return confirm('Are you sure, \n Do you want to delete this record?');" class="label label-danger">Delete</a>
                                     </td>
                                   </tr>
