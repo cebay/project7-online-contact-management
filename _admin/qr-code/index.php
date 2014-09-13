@@ -1,3 +1,7 @@
+<?php
+  require('../config/class.php');
+  $records = $opr->select_records('*', TBL_CONTACT);
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -48,27 +52,24 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr>
-                                  <td>1</td>
-                                  <td>Mark</td>
-                                  <td>Otto</td>
-                                  <td>[image]</td>
-                                  <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                  <td>2</td>
-                                  <td>Jacob</td>
-                                  <td>Thornton</td>
-                                  <td>[image]</td>
-                                  <td>@fat</td>
-                                </tr>
-                                <tr>
-                                  <td>3</td>
-                                  <td>Larry</td>
-                                  <td>the Bird</td>
-                                  <td>[image]</td>
-                                  <td>@twitter</td>
-                                </tr>
+                                <?php 
+                                while($row = mysql_fetch_array($records)) {
+                                ?>
+                                  <tr>
+                                    <td>1</td>
+                                    <td><?php echo $row['con_fname']; ?></td>
+                                    <td><?php echo $row['con_lname']; ?></td>
+                                    <td>
+                                      <img src="<?php echo str_replace("190x190","190x190",$row['con_qr_image']); ?>">
+                                    </td>
+                                    <td>
+                                      <span class="label label-warning">Edit</span> | 
+                                      <span class="label label-danger">Delete</span>
+                                    </td>
+                                  </tr>
+                                <?php
+                                }
+                                ?>
                               </tbody>
                             </table>
 

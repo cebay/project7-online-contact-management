@@ -176,7 +176,7 @@
 
             var oImage = img_create(encodeURI(uri), "Loading...", con_fname);
             var oImageWrapper = document.getElementsByClassName("qr-image")[0];
-            document.getElementById("con_qr_image").value = uri;
+            document.getElementById("con_qr_image").value = encodeURI(uri);
             oImageWrapper.appendChild(oImage);
 
             $("#submit").removeClass("disabled");
