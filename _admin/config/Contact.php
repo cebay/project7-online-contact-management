@@ -83,7 +83,11 @@
 
 		}
 		function delete() {
+			$con_id = $this->con_id;
 
+			$stmt 	 = sprintf(CONTACT_SQL_DELETE, $con_id);
+
+			return mysql_query($stmt);
 		}
 		// [x] basic info
 		// save map, logo

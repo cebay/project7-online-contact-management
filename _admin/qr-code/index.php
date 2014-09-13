@@ -1,6 +1,12 @@
 <?php
   require('../config/class.php');
   $records = $opr->select_records('*', TBL_CONTACT);
+  if($_GET['action']=='delete') {
+    $opr->contact->con_id = $_GET['con_id'];
+
+    $opr->contact->delete();
+    $records = $opr->select_records('*', TBL_CONTACT);
+  }
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -52,19 +58,20 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                <?php 
+                                <?php
+                                $i=1; 
                                 while($row = mysql_fetch_array($records)) {
                                 ?>
                                   <tr>
-                                    <td>1</td>
+                                    <td><?php echo $i++; ?></td>
                                     <td><?php echo $row['con_fname']; ?></td>
                                     <td><?php echo $row['con_lname']; ?></td>
                                     <td>
                                       <img src="<?php echo str_replace("190x190","190x190",$row['con_qr_image']); ?>">
                                     </td>
                                     <td>
-                                      <span class="label label-warning">Edit</span> | 
-                                      <span class="label label-danger">Delete</span>
+                                      <a href="?action=edit" class="label label-warning">Edit</a> | 
+                                      <a href="?action=delete&con_id=<?php echo $row['con_id']; ?>" onclick="return confirm('Are you sure, \n Do you want to delete this record?');" class="label label-danger">Delete</a>
                                     </td>
                                   </tr>
                                 <?php

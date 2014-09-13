@@ -19,10 +19,14 @@
 					`con_note`, 
 					`con_qr_image`, 
 					`user_id`) VALUES ('','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s',%u)");
+	
+	define('CONTACT_SQL_DELETE',
+			"DELETE FROM " . TBL_CONTACT . " WHERE con_id = %u");
 
 	define('FIND_RECORD',
 			"SELECT %s FROM %s WHERE %s");
 	
 	define('SELECT_RECORDS', 
 			"SELECT %s FROM %s");
+
 ?>
