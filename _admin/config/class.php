@@ -8,4 +8,5 @@
 	}
 	$opr = new Operation;
 	$opr->contact 	= new Contact;
+	$opr->user 			= new User;
 ?>

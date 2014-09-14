@@ -3,6 +3,7 @@
 
 	Class Operation extends Connection {
 		public $contact;
+		public $user;
 
 		function __construct() {
 			$conn = new Connection;
@@ -22,6 +23,12 @@
 			$query 	 = mysql_query($stmt);
 
 			return $query;
+		}
+
+		function add_date($orgDate,$mth){
+		  $cd = strtotime($orgDate);
+		  $retDAY = date('Y-m-d', mktime(0,0,0,date('m',$cd)+$mth,date('d',$cd),date('Y',$cd)));
+		  return $retDAY;
 		}
 	}
 ?>

@@ -39,23 +39,7 @@
                             <li class="list-group-item"><i class="icon-ok text-danger"></i> 3 months </li>
                           </ul>
                         <div class="panel-footer">
-                          <a class="btn btn-lg btn-block btn-danger" href="https://creativemarket.com/artlabs/12114-Bootstrap-3.0.-pricing-tables-flat">BUY NOW!</a>
-                        </div>
-                     </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="panel panel-danger">
-                         <div class="panel-heading"><h3 class="text-center">Silver PLAN</h3></div>
-                          <div class="panel-body text-center">
-                            <p class="lead" style="font-size:40px"><strong>$10 / month</strong></p>
-                          </div>
-                          <ul class="list-group list-group-flush text-center">
-                            <li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use</li>
-                            <li class="list-group-item"><i class="icon-ok text-danger"></i> 500 contacts </li>
-                            <li class="list-group-item"><i class="icon-ok text-danger"></i> 3 years </li>
-                          </ul>
-                        <div class="panel-footer">
-                          <a class="btn btn-lg btn-block btn-danger" href="https://creativemarket.com/artlabs/12114-Bootstrap-3.0.-pricing-tables-flat">BUY NOW!</a>
+                          <a class="btn btn-lg btn-block btn-danger" href="registration.php?plan=1">BUY NOW!</a>
                         </div>
                      </div>
                     </div>
@@ -71,9 +55,25 @@
                           <li class="list-group-item"><i class="icon-ok text-danger"></i> 12 months </li>
                         </ul>
                         <div class="panel-footer">
-                          <a class="btn btn-lg btn-block btn-danger" href="https://creativemarket.com/artlabs/12114-Bootstrap-3.0.-pricing-tables-flat">BUY NOW!</a>
+                          <a class="btn btn-lg btn-block btn-danger" href="registration.php?plan=21">BUY NOW!</a>
                         </div>
                       </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="panel panel-danger">
+                         <div class="panel-heading"><h3 class="text-center">Silver PLAN</h3></div>
+                          <div class="panel-body text-center">
+                            <p class="lead" style="font-size:40px"><strong>$10 / month</strong></p>
+                          </div>
+                          <ul class="list-group list-group-flush text-center">
+                            <li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use</li>
+                            <li class="list-group-item"><i class="icon-ok text-danger"></i> 500 contacts </li>
+                            <li class="list-group-item"><i class="icon-ok text-danger"></i> 3 years </li>
+                          </ul>
+                        <div class="panel-footer">
+                          <a class="btn btn-lg btn-block btn-danger" href="registration.php?plan=22">BUY NOW!</a>
+                        </div>
+                     </div>
                     </div>
                      <div class="col-md-3">
                       <div class="panel panel-success">
@@ -87,7 +87,7 @@
                           <li class="list-group-item"><i class="icon-ok text-danger"></i> 5 years </li>
                         </ul>
                         <div class="panel-footer">
-                          <a class="btn btn-lg btn-block btn-danger" href="https://creativemarket.com/artlabs/12114-Bootstrap-3.0.-pricing-tables-flat">BUY NOW!</a>
+                          <a class="btn btn-lg btn-block btn-danger" href="registration.php?plan=23">BUY NOW!</a>
                         </div>
                      </div>
                     </div>

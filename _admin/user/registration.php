@@ -1,3 +1,38 @@
+<?php
+  require("../config/class.php");
+
+  if($_POST) {
+    $opr->user->user_name         = $_POST['user_name'];
+    $opr->user->user_password     = $_POST['user_password'];
+    $opr->user->user_type         = $_GET['plan'];
+    
+    $user_contact_num = 50;
+    $user_expired_date = 3; // unit in month
+    switch($_GET['plan']) {
+      case 21:
+              $user_contact_num  = 100;
+              $user_expired_date = 12;
+              break;
+      case 22:
+              $user_contact_num  = 500;
+              $user_expired_date = 12 * 3;
+              break;
+      case 23:
+              $user_contact_num  = 5000;
+              $user_expired_date = 12 * 5;
+              break;
+    }
+    $opr->user->user_contact_num  = $user_contact_num;
+    $opr->user->user_expired_date = $opr->add_date(date("Y-m-d"),$user_expired_date);
+    $opr->user->user_status       = 1; // enable by default
+
+    if(!$opr->user->save()) {
+      echo "Register Fail!";
+    } else {
+      header("location: ../");
+    }
+  }
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -39,35 +74,15 @@
                                       <p>Welcome! Ready to register with Gmarket? <br>
                                         It’s free and simple!</p>
                                       <div class="form-group">
-                                        <label for="con_fname" class="lb-size">Username:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_fname" id="con_fname" value="<?php echo $record['con_fname']; ?>">
+                                        <label for="user_name" class="lb-size">Username:</label>
+                                        <input type="text" class="form-control f-control-size" name="user_name" id="user_name" value="">
                                       </div>
                                       <div class="form-group">
-                                        <label for="con_lname" class="lb-size">Password:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_lname" id="con_lname" value="<?php echo $record['con_lname']; ?>">
+                                        <label for="user_password" class="lb-size">Password:</label>
+                                        <input type="password" class="form-control f-control-size" name="user_password" id="user_password" value="">
                                       </div>
                                       <div class="form-group">
-                                        <label for="con_com_name" class="lb-size">Company Name:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_com_name" id="con_com_name" value="<?php echo $record['con_com_name']; ?>">
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="con_title" class="lb-size">Title:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_title" id="con_title" value="<?php echo $record['con_title']; ?>">
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="con_phone" class="lb-size">Telephone:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_phone" id="con_phone" value="<?php echo $record['con_phone']; ?>">
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="con_email" class="lb-size">Email:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_email" id="con_email" value="<?php echo $record['con_email']; ?>">
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="con_url" class="lb-size">URL:</label>
-                                        <input type="text" class="form-control f-control-size" name="con_url" id="con_url" value="<?php echo $record['con_url']; ?>">
-                                      </div>
-                                      <div class="form-group">
-                                        <button class="btn btn-success btn-sm pull-right">Register Now</button>
+                                        <input type="submit" value="Register Now" class="btn btn-success btn-sm pull-right">
                                       </div>
                                     </div>
                                 </form>

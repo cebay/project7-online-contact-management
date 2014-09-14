@@ -48,4 +48,26 @@
 	define('SELECT_RECORDS', 
 			"SELECT %s FROM %s");
 
+	define('USER_SQL_INSERT',
+			"INSERT INTO " . TBL_USER . "(
+				`user_id`, 
+				`user_name`, 
+				`user_password`, 
+				`user_type`, 
+				`user_contact_num`, 
+				`user_expired_date`, 
+				`user_status`) VALUES ('','%s','%s',%u,%u,'%s',%u)");
+
+	define('USER_SQL_UPDATE',
+			"UPDATE " . TBL_USER . " SET 
+			`user_name`					= '%s',
+			`user_password`			= '%s',
+			`user_type`					= %u,
+			`user_contact_num`	= %u,
+			`user_expired_date`	= '%s',
+			`user_status`				= %u
+			WHERE user_id = %u");
+
+	define('USER_SQL_DELETE',
+			"DELETE FROM " . TBL_USER . " WHERE user_id = %u");
 ?>

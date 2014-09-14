@@ -6,4 +6,5 @@
 
 	// TABLES
 	define('TBL_CONTACT'	,'tbl_contact');
+	define('TBL_USER'	,'tbl_user');
 ?>
