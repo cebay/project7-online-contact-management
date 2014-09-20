@@ -1,3 +1,13 @@
+<?php
+  require('../config/class.php');
+
+  if($_GET['filter']==0) {
+
+    $users = $opr->select_records('*', TBL_USER);
+  } else {
+    $users = $opr->find_records('*', TBL_USER, "user_type = " . $_GET['filter']);
+  }
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -44,12 +54,13 @@
                                     Filter By <span class="caret"></span>
                                   </button>
                                   <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">All</a></li>
+                                    <li><a href="?filter=0">All</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="#">normal account</a></li>
-                                    <li><a href="#">premium</a></li>
+                                    <li><a href="?filter=1">normal account</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
+                                    <li><a href="?filter=22">Silver</a></li>
+                                    <li><a href="?filter=21">Gold</a></li>
+                                    <li><a href="?filter=23">Diamond</a></li>
                                   </ul>
                                 </div>
                               </div>
@@ -61,30 +72,32 @@
                               <thead>
                                 <tr>
                                   <th>#</th>
-                                  <th>First Name</th>
-                                  <th>Last Name</th>
-                                  <th>Action</th>
+                                  <th>Name</th>
+                                  <th>Type</th>
+                                  <th>Status</th>
                                 </tr>
                               </thead>
                               <tbody>
+                                <?php
+                                while($user = mysql_fetch_array($users)){
+                                ?>
                                 <tr>
                                   <td>1</td>
-                                  <td>Mark</td>
-                                  <td>Otto</td>
-                                  <td>@mdo</td>
+                                  <td><?php echo $user['user_name']; ?></td>
+                                  <td>
+                                    <?php echo $opr->user->get_user_type($user['user_type']); ?>
+                                  </td>
+                                  <td>
+                                    <label>
+                                      <span class="label label-default">
+                                        <?php echo (($user['user_status']==1) ? 'enabled':'disabled'); ?>
+                                      </span>
+                                    </label>
+                                  </td>
                                 </tr>
-                                <tr>
-                                  <td>2</td>
-                                  <td>Jacob</td>
-                                  <td>Thornton</td>
-                                  <td>@fat</td>
-                                </tr>
-                                <tr>
-                                  <td>3</td>
-                                  <td>Larry</td>
-                                  <td>the Bird</td>
-                                  <td>@twitter</td>
-                                </tr>
+                                <?php 
+                                }
+                                ?>
                               </tbody>
                             </table>
 

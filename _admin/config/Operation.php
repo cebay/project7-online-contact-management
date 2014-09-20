@@ -18,6 +18,13 @@
 			return $record;
 		}
 
+		function find_records($field, $table, $condition) {
+			$stmt	 = sprintf(FIND_RECORDS, $field, $table, $condition);
+			
+			$record 	 = mysql_query($stmt);
+			return $record;
+		}
+
 		function select_records($field, $table) {
 			$stmt	 = sprintf(SELECT_RECORDS, $field, $table);
 			$query 	 = mysql_query($stmt);

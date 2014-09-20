@@ -45,6 +45,9 @@
 	define('FIND_RECORD',
 			"SELECT %s FROM %s WHERE con_id = %u");
 
+	define('FIND_RECORDS',
+			"SELECT %s FROM %s WHERE %s");
+
 	define('FIND_USER',
 			"SELECT %s FROM %s WHERE user_id = %u");
 	
