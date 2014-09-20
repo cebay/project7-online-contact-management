@@ -10,7 +10,7 @@
 		<div class="container">
 			<ul class="menu">
 				<li>login</li>
-				<li>signup</li>
+				<li><a href="_admin/user">Signup</a></li>
 			</ul>
 		</div>
 	</nav>

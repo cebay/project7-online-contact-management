@@ -50,11 +50,26 @@
 
 			return mysql_query($stmt);
 		}
+		function manage_status() {
+			$user_id 			= $this->user_id;
+			$user_status 	= $this->user_status;
+			$stmt 	 			= sprintf(USER_SQL_UPDATE_STATUS, $user_status, $user_id);
+			
+			return mysql_query($stmt);
+		}
 		function delete() {
 			$user_id = $this->user_id;
 			$stmt 	 = sprintf(USER_SQL_DELETE, $user_id);
 
 			return mysql_query($stmt);
+		}
+		function find_user($field, $table, $condition) {
+			$stmt	 = sprintf(FIND_USER, $field, $table, $condition);
+			
+			$query 	 = mysql_query($stmt);
+			$record = mysql_fetch_assoc($query);
+
+			return $record;
 		}
 	}
 ?>

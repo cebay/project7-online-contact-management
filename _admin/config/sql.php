@@ -44,6 +44,9 @@
 
 	define('FIND_RECORD',
 			"SELECT %s FROM %s WHERE con_id = %u");
+
+	define('FIND_USER',
+			"SELECT %s FROM %s WHERE user_id = %u");
 	
 	define('SELECT_RECORDS', 
 			"SELECT %s FROM %s");
@@ -65,6 +68,11 @@
 			`user_type`					= %u,
 			`user_contact_num`	= %u,
 			`user_expired_date`	= '%s',
+			`user_status`				= %u
+			WHERE user_id = %u");
+
+	define('USER_SQL_UPDATE_STATUS',
+			"UPDATE " . TBL_USER . " SET 
 			`user_status`				= %u
 			WHERE user_id = %u");
 

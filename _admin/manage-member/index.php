@@ -1,3 +1,15 @@
+<?php
+  require('../config/class.php');
+
+  if($_GET['action']=='update') {
+    $opr->user->user_id          = $_GET['user_id'];
+    $user_current_status    = $opr->user->find_user('user_status', TBL_USER, $_GET['user_id']);
+    $opr->user->user_status = ($user_current_status['user_status'] == 1)? 0 : 1;
+
+    $opr->user->manage_status();
+  }
+  $users = $opr->select_records('*', TBL_USER);
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -41,30 +53,31 @@
                               <thead>
                                 <tr>
                                   <th>#</th>
-                                  <th>First Name</th>
-                                  <th>Last Name</th>
+                                  <th>User name</th>
+                                  <th>Plan</th>
                                   <th>Action</th>
                                 </tr>
                               </thead>
                               <tbody>
+                                <?php
+                                while($user = mysql_fetch_array($users)){
+                                ?>
                                 <tr>
                                   <td>1</td>
-                                  <td>Mark</td>
-                                  <td>Otto</td>
-                                  <td>@mdo</td>
+                                  <td><?php echo $user['user_name']; ?></td>
+                                  <td><?php echo $user['user_type']; ?></td>
+                                  <td>
+                                    <label>
+                                      <input type="checkbox" <?php echo (($user['user_status']==1) ? 'checked':' '); ?>> 
+                                      <a href="?action=update&user_id=<?php echo $user['user_id'] ?>" class="label label-<?php echo (($user['user_status']==1) ? 'primary':'danger'); ?>">
+                                        <?php echo (($user['user_status']==1) ? 'enabled':'disabled'); ?>
+                                      </a>
+                                    </label>
+                                  </td>
                                 </tr>
-                                <tr>
-                                  <td>2</td>
-                                  <td>Jacob</td>
-                                  <td>Thornton</td>
-                                  <td>@fat</td>
-                                </tr>
-                                <tr>
-                                  <td>3</td>
-                                  <td>Larry</td>
-                                  <td>the Bird</td>
-                                  <td>@twitter</td>
-                                </tr>
+                                <?php 
+                                }
+                                ?>
                               </tbody>
                             </table>
 
