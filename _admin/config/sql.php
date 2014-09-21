@@ -92,8 +92,8 @@
 	define("AUTHORIZE_SQL_UPDATE",
 			"UPDATE " . TBL_AUTHORIZE . " SET 
 			`aut_manage_user`= %u,
-			`aut_view_report`= %u WHERE user_id = %u");
+			`aut_view_report`= %u WHERE aut_id = %u");
 
-	define("AUTHORIZE_SQL_UPDATE",
-			"DELETE FROM " . TBL_AUTHORIZE . " WHERE user_id = %u");
+	define("AUTHORIZE_SQL_DELETE",
+			"DELETE FROM " . TBL_AUTHORIZE . " WHERE aut_id = %u");
 ?>

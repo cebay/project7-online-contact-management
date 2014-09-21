@@ -4,6 +4,7 @@
 	Class Operation extends Connection {
 		public $contact;
 		public $user;
+		public $authorize;
 
 		function __construct() {
 			$conn = new Connection;

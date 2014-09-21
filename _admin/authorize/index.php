@@ -1,6 +1,13 @@
 <?php
   require('../config/class.php');
 
+  if($_GET) {
+    $opr->authorize->aut_id          = $_GET['aut_id'];
+    $opr->authorize->aut_manage_user = ($_POST['aut_manage_user']=="on") ? 1: 0;
+    $opr->authorize->aut_view_report = ($_POST['aut_view_report']=="on") ? 1: 0;
+
+    $opr->authorize->update();
+  }
   $auth_users = $opr->select_records('*', TBL_AUTHORIZE);
 ?>
 <!DOCTYPE html>
@@ -59,6 +66,7 @@
                                 <?php
                                 while($auth_user = mysql_fetch_array($auth_users)){
                                 ?>
+                                <form method="post" action="?aut_id=<?php echo $auth_user['aut_id']; ?>">
                                 <tr>
                                   <td>1</td>
                                   <?php
@@ -67,15 +75,16 @@
                                   ?>
                                   <td><?php echo $fetched_row["user_name"] ?></td>
                                   <td>
-                                    <input type="checkbox" <?php echo (($auth_user['aut_manage_user']==1) ? 'checked':' '); ?>>
+                                    <input name="aut_manage_user" type="checkbox" <?php echo (($auth_user['aut_manage_user']==1) ? 'checked':' '); ?>>
                                   </td>
                                   <td>
-                                    <input type="checkbox" <?php echo (($auth_user['aut_view_report']==1) ? 'checked':' '); ?>>
+                                    <input name="aut_view_report" type="checkbox" <?php echo (($auth_user['aut_view_report']==1) ? 'checked':' '); ?>>
                                   </td>
                                   <td>
-                                    <button class="btn btn-xs btn-primary">update</button>
+                                    <input type="submit" value="update" class="btn btn-xs btn-primary">
                                   </td>
                                 </tr>
+                                </form>
                                 <?php 
                                 }
                                 ?>

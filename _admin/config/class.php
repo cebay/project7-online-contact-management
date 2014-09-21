@@ -9,4 +9,5 @@
 	$opr = new Operation;
 	$opr->contact 	= new Contact;
 	$opr->user 			= new User;
+	$opr->authorize	= new Authorize;
 ?>
