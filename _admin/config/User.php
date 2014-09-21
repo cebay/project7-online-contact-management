@@ -34,7 +34,14 @@
 			$stmt = sprintf(USER_SQL_INSERT, $user_name, $user_password, $user_type, $user_contact_num, 
 				$user_expired_date, $user_status);
 
-			return mysql_query($stmt);
+			$resource = mysql_query($stmt);
+
+			// insert data to authorize table.
+			$insert_id = mysql_insert_id();
+			$stmt_auth = sprintf(AUTHORIZE_SQL_INSERT, $insert_id);
+			mysql_query($stmt_auth);
+
+			return $resource;
 		}
 		function update() {
 			$user_id 						= $this->user_id;

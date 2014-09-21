@@ -81,4 +81,19 @@
 
 	define('USER_SQL_DELETE',
 			"DELETE FROM " . TBL_USER . " WHERE user_id = %u");
+
+	define("AUTHORIZE_SQL_INSERT",
+			"INSERT INTO " . TBL_AUTHORIZE . "(
+				`aut_id`, 
+				`user_id`, 
+				`aut_manage_user`, 
+				`aut_view_report`) VALUES ('',%u,0,0)");
+
+	define("AUTHORIZE_SQL_UPDATE",
+			"UPDATE " . TBL_AUTHORIZE . " SET 
+			`aut_manage_user`= %u,
+			`aut_view_report`= %u WHERE user_id = %u");
+
+	define("AUTHORIZE_SQL_UPDATE",
+			"DELETE FROM " . TBL_AUTHORIZE . " WHERE user_id = %u");
 ?>

@@ -1,3 +1,8 @@
+<?php
+  require('../config/class.php');
+
+  $auth_users = $opr->select_records('*', TBL_AUTHORIZE);
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -37,6 +42,9 @@
                           <!--right-->
                           <div class="col-md-9">
                             <!-- Single button -->
+                            <?php
+                            if(mysql_num_rows($auth_users) > 0) {
+                            ?>
                             <table class="table table-striped">
                               <thead>
                                 <tr>
@@ -48,36 +56,36 @@
                                 </tr>
                               </thead>
                               <tbody>
+                                <?php
+                                while($auth_user = mysql_fetch_array($auth_users)){
+                                ?>
                                 <tr>
                                   <td>1</td>
-                                  <td>Mark</td>
-                                  <td>no</td>
-                                  <td>yes</td>
+                                  <?php
+                                  $rows = $opr->find_records("*",TBL_USER,"user_id = " . $auth_user['user_id']);
+                                  $fetched_row = mysql_fetch_assoc($rows);
+                                  ?>
+                                  <td><?php echo $fetched_row["user_name"] ?></td>
+                                  <td>
+                                    <input type="checkbox" <?php echo (($auth_user['aut_manage_user']==1) ? 'checked':' '); ?>>
+                                  </td>
+                                  <td>
+                                    <input type="checkbox" <?php echo (($auth_user['aut_view_report']==1) ? 'checked':' '); ?>>
+                                  </td>
                                   <td>
                                     <button class="btn btn-xs btn-primary">update</button>
                                   </td>
                                 </tr>
-                                <tr>
-                                  <td>2</td>
-                                  <td>Jacob</td>
-                                  <td>yes</td>
-                                  <td>yes</td>
-                                  <td>
-                                    <button class="btn btn-xs btn-primary">update</button>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>3</td>
-                                  <td>Larry</td>
-                                  <td>no</td>
-                                  <td>yes</td>
-                                  <td>
-                                    <button class="btn btn-xs btn-primary">update</button>
-                                  </td>
-                                </tr>
+                                <?php 
+                                }
+                                ?>
                               </tbody>
                             </table>
-
+                            <?php
+                            } else {
+                              echo "<p>No record.</p>";
+                            }
+                            ?>
                           </div><!--/right-->
                         </div><!--/row-->
                     </div><!--/container-->
