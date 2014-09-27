@@ -1,4 +1,8 @@
-<?php $current_page = 'root' ?>
+<?php 
+    $current_page = 'root'; 
+    require('config/class.php');
+?>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -37,7 +41,7 @@
                           
                           <!--right-->
                           <div class="col-md-9">
-                            
+    
                             <h1>Welcome to Radin's Tour Company</h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

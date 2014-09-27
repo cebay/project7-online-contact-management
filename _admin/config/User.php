@@ -100,7 +100,9 @@
 			$user_password	= $this->user_password;
 
 			$stmt = sprintf(AUTH_SQL, $user_name, $user_password, date("Y-m-d"));
-			return mysql_query($stmt);
+			$result = mysql_query($stmt);
+
+			return mysql_fetch_assoc($result);
 		}
 	}
 ?>

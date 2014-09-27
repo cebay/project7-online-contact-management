@@ -1,10 +1,25 @@
 <?php
+  // session_start();
   require("../config/class.php");
-
+  
+  $is_login_fail = false;
   if($_POST) {
+
   	$opr->user->user_name = $_POST['user_name'];
   	$opr->user->user_password = $_POST['user_password'];
     
+    $auth_user = $opr->user->login();
+    if($auth_user[user_id] != '') {
+      // $_SESSION['user_id'] = $auth_user[user_id];
+      header('location: ../'); // go to admin homepage
+    } else {
+      $is_login_fail = true;
+    }
+  }
+
+  if($_GET['action'] == 'logout') {
+    unset($_SESSION['user_id']);
+    header('location');
   }
 ?>
 <!DOCTYPE html>
@@ -44,10 +59,8 @@
                                 <form role="form" id="frm" method="post">
                                     <div class="col-xs-6 col-sm-offset-3">
                                       <?php
-                                        if(mysql_num_rows($opr->user->login()) > 0) {
-                                          header('location: ../');
-                                        } else {
-                                          echo 'Login fail!';
+                                        if($is_login_fail) {
+                                          echo '<span style="color: red;">Login fail!<span>';
                                         }
                                       ?>
                                       <div class="form-group">
