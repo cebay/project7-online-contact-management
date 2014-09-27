@@ -78,7 +78,6 @@
 
 			return $record;
 		}
-
 		function get_user_type($user_type) {
 			$type = 'Free';
 			switch($user_type) {
@@ -94,6 +93,14 @@
 	    }
 
 			return $type;
+		}
+		function login($username, $password) {
+
+			$user_name 			= $this->user_name;
+			$user_password	= $this->user_password;
+
+			$stmt = sprintf(AUTH_SQL, $user_name, $user_password, date("Y-m-d"));
+			return mysql_query($stmt);
 		}
 	}
 ?>

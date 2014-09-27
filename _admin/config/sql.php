@@ -96,4 +96,12 @@
 
 	define("AUTHORIZE_SQL_DELETE",
 			"DELETE FROM " . TBL_AUTHORIZE . " WHERE aut_id = %u");
+
+	define("AUTH_SQL", 
+			"SELECT * FROM " . TBL_USER . " WHERE 
+			user_name = '%s' and 
+			user_password = '%s' and 
+			user_expired_date >= '%s' and 
+			user_status = 1");
+
 ?>

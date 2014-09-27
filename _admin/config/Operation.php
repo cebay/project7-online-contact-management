@@ -19,6 +19,16 @@
 			return $record;
 		}
 
+		function auth($username, $password) {
+
+			$stmt	 = sprintf(AUTH_SQL, $username, $password);
+			
+			$query 	 = mysql_query($stmt);
+			$record = mysql_fetch_assoc($query);
+
+			return $record;
+		}
+
 		function find_records($field, $table, $condition) {
 			$stmt	 = sprintf(FIND_RECORDS, $field, $table, $condition);
 			

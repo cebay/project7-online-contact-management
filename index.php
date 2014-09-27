@@ -9,7 +9,7 @@
 	<nav class="menu-top">
 		<div class="container">
 			<ul class="menu">
-				<li>login</li>
+				<li><a href="_admin/login">Login</a></li>
 				<li><a href="_admin/user">Signup</a></li>
 			</ul>
 		</div>
