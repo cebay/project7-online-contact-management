@@ -1,10 +1,19 @@
 <?php
 	// members IS440: radin, chor, channa.
-	// session_start();
+	session_start();
 
-	// if($_SESSION['user_id'] == '') {
-	// 	header('location: ../_admin/login');
-	// }
+	// echo $current_page; exit(0);
+	$redirect_uri = ($current_page == 'root') ? '../_admin/login' : '../login';
+	if($current_page != 'login') {
+		if($_SESSION['user_id'] == '') {
+			header('location: ' . $redirect_uri);
+		}
+	}
+	
+	if($_GET['action'] == 'logout') {
+		unset($_SESSION['user_id']);
+		header('location: ' . $redirect_uri);
+	}
 
 	require("sql.php");
 

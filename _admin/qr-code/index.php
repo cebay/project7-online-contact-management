@@ -1,4 +1,5 @@
 <?php
+  $current_page = 'qr-code';
   require('../config/class.php');
   $records = $opr->select_records('*', TBL_CONTACT);
   if($_GET['action']=='delete') {

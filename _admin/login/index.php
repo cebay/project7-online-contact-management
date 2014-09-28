@@ -1,5 +1,6 @@
 <?php
   // session_start();
+  $current_page = 'login';
   require("../config/class.php");
   
   $is_login_fail = false;
@@ -9,18 +10,15 @@
   	$opr->user->user_password = $_POST['user_password'];
     
     $auth_user = $opr->user->login();
+
     if($auth_user[user_id] != '') {
-      // $_SESSION['user_id'] = $auth_user[user_id];
+      $_SESSION['user_id'] = $auth_user[user_id];
       header('location: ../'); // go to admin homepage
     } else {
       $is_login_fail = true;
     }
   }
 
-  if($_GET['action'] == 'logout') {
-    unset($_SESSION['user_id']);
-    header('location');
-  }
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
