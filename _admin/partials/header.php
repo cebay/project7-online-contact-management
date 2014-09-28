@@ -1,4 +1,10 @@
-<?php $path = (($current_page != "root") ? "../" : ""); ?>
+<?php 
+    require_once('../config/class.php');
+    $users = $opr->find_records('*', TBL_USER, 'user_id = ' . $_SESSION['user_id']);
+    $auth_user = mysql_fetch_assoc($users);
+    $path = (($current_page != "root") ? "../" : ""); 
+?>
+
 
 <nav class="navbar navbar-default navbar-fixed-top" role="banner">
   <div class="container">
@@ -9,7 +15,7 @@
         <a href="../" class="navbar-brand" id="listing-name"> Radin's Tour Company</a>
         <ul class="nav nav-tabs pull-right visible-xs">
             <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">radin-reth@gmail.com <b class="caret"></b></a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo $auth_user['user_name']; ?> <b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li><a href="#"><span class="glyphicon glyphicon-edit"></span>&emsp;Edit Profile</a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-user"></span>&emsp;Change Password</a></li>
@@ -21,7 +27,7 @@
     <nav class="collapse navbar-collapse" role="navigation">
         <ul class="nav nav-tabs pull-right nav-config">
             <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">radin-reth@gmail.com <b class="caret"></b></a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo $auth_user['user_name']; ?> <b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li><a href="#"><span class="glyphicon glyphicon-edit"></span>&emsp;Edit Profile</a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-user"></span>&emsp;Change Password</a></li>
