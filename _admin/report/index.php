@@ -3,9 +3,9 @@
 
   if($_GET['filter']==0) {
 
-    $users = $opr->select_records('*', TBL_USER);
+    $reported_users = $opr->select_records('*', TBL_USER);
   } else {
-    $users = $opr->find_records('*', TBL_USER, "user_type = " . $_GET['filter']);
+    $reported_users = $opr->find_records('*', TBL_USER, "user_type = " . $_GET['filter']);
   }
 ?>
 <!DOCTYPE html>
@@ -65,7 +65,7 @@
                                 </div>
                               </div>
                               <div class="col-xs-6">
-                                <a href="csv-generator.php" class="btn btn-sm btn-primary pull-right">Export to Excel</a>
+                                <a href="csv-generator.php?filter=<?php echo $_GET['filter'] ?>" class="btn btn-sm btn-primary pull-right">Export to Excel</a>
                               </div>
                             </div>
                             <table class="table table-striped">
@@ -79,7 +79,7 @@
                               </thead>
                               <tbody>
                                 <?php
-                                while($user = mysql_fetch_array($users)){
+                                while($user = mysql_fetch_array($reported_users)){
                                 ?>
                                 <tr>
                                   <td>1</td>

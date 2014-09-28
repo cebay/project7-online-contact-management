@@ -1,5 +1,5 @@
 <?php
-  require('../config/class.php');
+  require_once('../config/class.php');
 
   if($_GET['action']=='update') {
     $opr->user->user_id          = $_GET['user_id'];
@@ -8,7 +8,7 @@
 
     $opr->user->manage_status();
   }
-  $users = $opr->select_records('*', TBL_USER);
+  $managed_users = $opr->select_records('*', TBL_USER);
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -60,22 +60,22 @@
                               </thead>
                               <tbody>
                                 <?php
-                                while($user = mysql_fetch_array($users)){
-                                ?>
-                                <tr>
-                                  <td>1</td>
-                                  <td><?php echo $user['user_name']; ?></td>
-                                  <td><?php echo $user['user_type']; ?></td>
-                                  <td>
-                                    <label>
-                                      <input type="checkbox" <?php echo (($user['user_status']==1) ? 'checked':' '); ?>> 
-                                      <a href="?action=update&user_id=<?php echo $user['user_id'] ?>" class="label label-<?php echo (($user['user_status']==1) ? 'primary':'danger'); ?>">
-                                        <?php echo (($user['user_status']==1) ? 'enabled':'disabled'); ?>
-                                      </a>
-                                    </label>
-                                  </td>
-                                </tr>
-                                <?php 
+                                while($user = mysql_fetch_array($managed_users)){
+                                  ?>
+                                    <tr>
+                                      <td>1</td>
+                                      <td><?php echo $user['user_name']; ?></td>
+                                      <td><?php echo $user['user_type']; ?></td>
+                                      <td>
+                                        <label>
+                                          <input type="checkbox" <?php echo (($user['user_status']==1) ? 'checked':' '); ?>> 
+                                          <a href="?action=update&user_id=<?php echo $user['user_id'] ?>" class="label label-<?php echo (($user['user_status']==1) ? 'primary':'danger'); ?>">
+                                            <?php echo (($user['user_status']==1) ? 'enabled':'disabled'); ?>
+                                          </a>
+                                        </label>
+                                      </td>
+                                    </tr>
+                                  <?php 
                                 }
                                 ?>
                               </tbody>

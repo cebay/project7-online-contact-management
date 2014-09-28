@@ -3,7 +3,11 @@
   // Original PHP code by Chirp Internet: www.chirp.com.au
   // Please acknowledge use of this code by including this header.
 
-  $users = $opr->select_records('*', TBL_USER);
+  if($_GET['filter'] == 0) {
+    $users = $opr->select_records('*', TBL_USER);
+  } else {
+    $users = $opr->find_records('*', TBL_USER, 'user_type = ' . $_GET['filter']);
+  }
   
 
   $data = array();
