@@ -1,8 +1,9 @@
 <?php 
-    require_once('../config/class.php');
+    $path = (($current_page != "root") ? "../" : ""); 
+
+    require_once($path . 'config/class.php');
     $users = $opr->find_records('*', TBL_USER, 'user_id = ' . $_SESSION['user_id']);
     $auth_user = mysql_fetch_assoc($users);
-    $path = (($current_page != "root") ? "../" : ""); 
 ?>
 
 

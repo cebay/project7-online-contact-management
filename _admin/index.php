@@ -1,6 +1,6 @@
 <?php 
     $current_page = 'root'; 
-    require('config/class.php');
+    require_once('config/class.php');
 ?>
 
 <!DOCTYPE html>

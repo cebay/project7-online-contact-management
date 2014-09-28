@@ -1,10 +1,12 @@
-<?php $path = (($current_page != "root") ? "../" : ""); ?>
-
 <?php
-	// require("../config/class.php");
-	// $users = $opr->find_records('*', TBL_AUTHORIZE, 'user_id = ' . $_SESSION['user_id']);
-	// $auth_user = mysql_fetch_assoc($users);
+
+	$path = (($current_page != "root") ? "../" : ""); 
+
+	require_once($path . 'config/class.php');
+	$users = $opr->find_records('*', TBL_AUTHORIZE, 'user_id = ' . $_SESSION['user_id']);
+	$auth_user = mysql_fetch_array($users);
 ?>
+
 <ul class="nav nav-stacked" id="sidebar">
     <li>
     	<a href="<?php echo $path.'qr-code'; ?>">
@@ -12,7 +14,7 @@
     	</a>
     </li>
     <?php
-    	if(1) {
+    	if($auth_user['aut_manage_user'] == 1) {
     		?>
     			<li>
     				<a href="<?php echo $path.'manage-member'; ?>">
@@ -23,7 +25,7 @@
     	}
     ?>
     <?php
-    	if(1) {
+    	if($auth_user['aut_view_report'] == 1) {
     		?>
     			<li>
     				<a href="<?php echo $path.'report'; ?>">

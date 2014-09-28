@@ -31,7 +31,7 @@
 
 		function find_records($field, $table, $condition) {
 			$stmt	 = sprintf(FIND_RECORDS, $field, $table, $condition);
-			
+
 			$record 	 = mysql_query($stmt);
 			return $record;
 		}
