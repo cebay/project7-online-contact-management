@@ -11,9 +11,9 @@
   <div class="container">
     <div class="navbar-header">
         <a href="<?php echo $path; ?>">
-            <img width="60" src="<?php echo $path; ?>../images/asian-tour-logo.jpg" id="logo" class="pull-left">
+            <img width="60" src="<?php echo $path; ?>../images/logo.png" id="logo" class="pull-left">
         </a>
-        <a href="../" class="navbar-brand" id="listing-name"> Radin's Tour Company</a>
+        <a href="../" class="navbar-brand" id="listing-name"> Online Contact Management </a>
         <ul class="nav nav-tabs pull-right visible-xs">
             <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo $auth_user['user_name']; ?> <b class="caret"></b></a>
