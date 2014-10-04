@@ -4,7 +4,7 @@
 
 	// echo $current_page; exit(0);
 	$redirect_uri = ($current_page == 'root') ? '../_admin/login' : '../login';
-	if($current_page != 'login') {
+	if($current_page != 'login' && $current_page != 'signup' && $_GET['action'] != 'signup') {
 		if($_SESSION['user_id'] == '') {
 			header('location: ' . $redirect_uri);
 		}

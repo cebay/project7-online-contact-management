@@ -1,4 +1,6 @@
 <?php
+
+  $current_page = 'signup';
   require("../config/class.php");
 
   if($_POST) {
@@ -29,7 +31,7 @@
     if(!$opr->user->save()) {
       echo "Register Fail!";
     } else {
-      header("location: ../");
+      header("location: ../?action=signup");
     }
   }
 ?>
