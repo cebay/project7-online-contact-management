@@ -28,10 +28,14 @@
     $opr->user->user_expired_date = $opr->add_date(date("Y-m-d"),$user_expired_date);
     $opr->user->user_status       = 1; // enable by default
 
-    if(!$opr->user->save()) {
-      echo "Register Fail!";
+    if(!($_POST['user_name']=="" || $_POST['user_password']=="")) {
+      if(!$opr->user->save()) {
+        echo "Register Fail!";
+      } else {
+        header("location: ../?action=signup");
+      }
     } else {
-      header("location: ../?action=signup");
+      $is_blank = true;
     }
   }
 ?>
@@ -73,8 +77,15 @@
                                     <input type="hidden" value="<?php echo $_GET['con_id'];?>" name="hidden_con_id">
                                     <div class="col-xs-6 col-sm-offset-3">
                                       <h1>Registration</h1>
-                                      <p>Welcome! Ready to register with Gmarket? <br>
+                                      <p>Welcome! Ready to register with OCM? <br>
                                         It’s free and simple!</p>
+                                      <?php
+                                        if($is_blank) {
+                                          ?>
+                                          <p style="color: red; font-weight: bold;">Username or Password cannot be blank.</p>
+                                          <?php
+                                        }
+                                      ?>
                                       <div class="form-group">
                                         <label for="user_name" class="lb-size">Username:</label>
                                         <input type="text" class="form-control f-control-size" name="user_name" id="user_name" value="">
