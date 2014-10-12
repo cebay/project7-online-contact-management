@@ -42,23 +42,20 @@
                           <!--right-->
                           <div class="col-md-9">
     
-                            <h1>Welcome to Radin's Tour Company</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <h1>Welcome to OCM</h1>
+                            <p>
+                                Online Contact Management is a powerful, personalized way to keep all relevant contact 
+                                information in one accessible, updateable location. Now everything you need to know is right at 
+                                your fingertips:</p>
 
-                            <hr>
+                            <ul>
+                                <li>Phone Numbers</li>
+                                <li>Emails</li>
+                                <li>Address</li>
+                                <li>And Much More!</li>
+                            </ul>
 
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum...</p>
-
+                            <img height="300" src="../images/contact-manager.png" alt="contact image flow">
                           </div><!--/right-->
                         </div><!--/row-->
                     </div><!--/container-->
