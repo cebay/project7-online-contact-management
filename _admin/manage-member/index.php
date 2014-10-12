@@ -60,12 +60,26 @@
                               </thead>
                               <tbody>
                                 <?php
+                                $i = 1;
                                 while($user = mysql_fetch_array($managed_users)){
+                                  $user_type = 'Free';
+
+                                  switch($user['user_type']) {
+                                    case 21:
+                                            $user_type = 'Gold';
+                                            break;
+                                    case 22:
+                                            $user_type = 'Silver';
+                                            break;
+                                    case 23:
+                                            $user_type = 'Diamond';
+                                            break;
+                                  }
                                   ?>
                                     <tr>
-                                      <td>1</td>
+                                      <td><?php echo $i++;?></td>
                                       <td><?php echo $user['user_name']; ?></td>
-                                      <td><?php echo $user['user_type']; ?></td>
+                                      <td><?php echo $user_type; ?></td>
                                       <td>
                                         <label>
                                           <input type="checkbox" <?php echo (($user['user_status']==1) ? 'checked':' '); ?>> 
