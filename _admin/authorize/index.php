@@ -64,11 +64,12 @@
                               </thead>
                               <tbody>
                                 <?php
+                                $i = 1;
                                 while($auth_user = mysql_fetch_array($auth_users)){
                                 ?>
                                 <form method="post" action="?aut_id=<?php echo $auth_user['aut_id']; ?>">
                                 <tr>
-                                  <td>1</td>
+                                  <td><?php echo $i++;?></td>
                                   <?php
                                   $rows = $opr->find_records("*",TBL_USER,"user_id = " . $auth_user['user_id']);
                                   $fetched_row = mysql_fetch_assoc($rows);

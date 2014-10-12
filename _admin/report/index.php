@@ -79,17 +79,18 @@
                               </thead>
                               <tbody>
                                 <?php
+                                $i = 1;
                                 while($user = mysql_fetch_array($reported_users)){
                                 ?>
                                 <tr>
-                                  <td>1</td>
+                                  <td><?php echo $i++;?></td>
                                   <td><?php echo $user['user_name']; ?></td>
                                   <td>
                                     <?php echo $opr->user->get_user_type($user['user_type']); ?>
                                   </td>
                                   <td>
                                     <label>
-                                      <span class="label label-default">
+                                      <span class="label label-<?php echo (($user['user_status']==1) ? 'success':'warning'); ?>">
                                         <?php echo (($user['user_status']==1) ? 'enabled':'disabled'); ?>
                                       </span>
                                     </label>
