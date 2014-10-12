@@ -14,3 +14,7 @@
   width: 190px;
   margin-top: 33px;
 }
+.active-admin {
+	background-color: #eee !important;
+	text-decoration: none;
+}

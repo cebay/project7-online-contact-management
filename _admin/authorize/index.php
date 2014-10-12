@@ -1,4 +1,5 @@
 <?php
+  $current_page = 'authorize';
   require('../config/class.php');
 
   if($_GET) {

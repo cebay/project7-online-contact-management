@@ -1,4 +1,5 @@
 <?php
+  $current_page = 'manage-member';
   require_once('../config/class.php');
 
   if($_GET['action']=='update') {

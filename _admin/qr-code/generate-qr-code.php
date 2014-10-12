@@ -1,5 +1,5 @@
 <?php
-
+  $current_page = 'qr-code';
   require("../config/class.php");
   if($_GET['action']=='edit' && !$_POST) {
 

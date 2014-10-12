@@ -21,8 +21,6 @@
             <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo $auth_user['user_name']; ?> <b class="caret"></b></a>
             <ul class="dropdown-menu">
-                <li><a href="#"><span class="glyphicon glyphicon-edit"></span>&emsp;Edit Profile</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span>&emsp;Change Password</a></li>
                 <li><a href="?action=logout"><span class="glyphicon glyphicon-log-out"></span>&emsp;Logout</a></li>
             </ul>
             </li>
@@ -39,8 +37,6 @@
             <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo $auth_user['user_name']; ?> <b class="caret"></b></a>
             <ul class="dropdown-menu">
-                <li><a href="#"><span class="glyphicon glyphicon-edit"></span>&emsp;Edit Profile</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span>&emsp;Change Password</a></li>
                 <li><a href="?action=logout"><span class="glyphicon glyphicon-log-out"></span>&emsp;Logout</a></li>
             </ul>
             </li>

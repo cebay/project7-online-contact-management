@@ -1,4 +1,5 @@
 <?php
+  $current_page = 'report';
   require('../config/class.php');
 
   if($_GET['filter']==0) {
